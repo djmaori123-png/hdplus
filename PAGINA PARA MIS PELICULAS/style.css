@@ -384,47 +384,35 @@ z-index:1001;
 
 .submenu{
 position:fixed;
-top:60px;
-left:0;
-right:0;
-width:100%;
-background:rgba(5,8,22,0.95);
-backdrop-filter:blur(14px);
+top:70px;
+right:-280px;
+width:230px;
+padding:18px;
+gap:12px;
+background:rgba(6,12,30,0.96);
+border-radius:20px;
+transition:0.4s;
+z-index:10000;
+box-shadow:0 0 35px rgba(0,229,255,0.22);
 flex-direction:column;
-gap:0;
-padding:0;
-border-bottom:1px solid rgba(0,229,255,0.15);
-max-height:0;
-overflow:hidden;
-opacity:0;
-transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-z-index:1000;
-box-shadow:0 8px 16px rgba(0,0,0,0.3);
 }
 
-.submenu.active{
-max-height:500px;
-opacity:1;
-overflow-y:auto;
+.submenu.show{
+right:15px;
 }
 
 .submenu a{
-display:block;
-padding:16px 20px;
-border-bottom:1px solid rgba(0,229,255,0.1);
-text-align:left;
-font-size:15px;
-transition:all 0.3s ease;
-}
-
-.submenu a:last-child{
-border-bottom:none;
+padding:12px;
+border-radius:14px;
+background:rgba(255,255,255,0.04);
+text-decoration:none;
+color:#e2e8f0;
+transition:0.3s;
 }
 
 .submenu a:hover{
-background:rgba(0,229,255,0.1);
-padding-left:30px;
-color:#00e5ff;
+background:rgba(0,229,255,0.12);
+color:#e2e8f0;
 }
 
 .search-box{
