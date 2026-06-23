@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HD PLUS ANIME</title>
+
+<link rel="stylesheet" href="anime.css">
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+
+<div class="loader-circle"></div>
+
+<h2>Cargando Anime...</h2>
+
+</div>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">HD PLUS</div>
+
+<div class="submenu" id="submenu">
+<a href="index.html">Inicio</a>
+<a href="peliculas.html">Películas</a>
+<a href="dibujos.html">Dibujos</a>
+<a href="anime.html">Anime Kids</a>
+<a href="series.html">Series</a>
+
+</div>
+
+<div class="search-box">
+<span class="search-icon">🔍</span>
+<input id="search" placeholder="Buscar anime...">
+</div>
+
+<div class="menu-icon" id="menuIcon">☰</div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="hero anime-hero">
+
+<div>
+
+<h1>HD PLUS ANIME</h1>
+
+<p>
+Disfruta los mejores animes con calidad HD,
+temporadas y capítulos.
+</p>
+
+</div>
+
+</div>
+
+<!-- ESTRENOS -->
+
+<div class="section">
+<h2>🔥 Nuevos Animes</h2>
+<div class="row" id="estrenos"></div>
+</div>
+
+<!-- ANIME -->
+
+<div class="section">
+<h2>🎌 Anime Popular</h2>
+<div class="row" id="anime"></div>
+</div>
+
+<!-- ACCIÓN -->
+
+<div class="section">
+<h2>⚔ Anime de Acción</h2>
+<div class="row" id="accion"></div>
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">✖</span>
+
+<img id="img">
+
+<div class="modal-info">
+
+<h2 id="title"></h2>
+
+<p id="desc"></p>
+
+<div id="seriesControls" class="series-controls">
+
+<div id="seasonList" class="season-tabs"></div>
+
+<div id="episodeList" class="episode-list"></div>
+
+</div>
+
+<iframe id="player" class="player" allowfullscreen></iframe>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="anime.js"></script>
+
+</body>
+</html>

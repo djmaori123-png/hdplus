@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HD PLUS - INICIO</title>
+
+<link rel="stylesheet" href="peliculas.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+<div class="loader-circle"></div>
+<h2>Cargando...</h2>
+</div>
+
+<!-- NAVBAR (igual que películas) -->
+<div class="navbar">
+
+    <div class="logo">HD PLUS</div>
+
+    <!-- BOTON MENU MOVIL -->
+    <div class="menu-icon" id="menuIcon">☰</div>
+
+    <!-- MENU -->
+    <div class="submenu" id="submenu">
+       <a href="index.html">Inicio</a>
+<a href="peliculas.html">Películas</a>
+<a href="dibujos.html">Dibujos</a>
+<a href="anime.html">Anime Kids</a>
+<a href="series.html">Series</a>
+    </div>
+
+    <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Buscar...">
+    </div>
+
+</div>
+
+<div class="hero-carousel">
+
+  <button class="carousel-btn left" onclick="prevSlide()">❮</button>
+
+  <div class="carousel-wrapper" id="carouselWrapper">
+    <!-- JS lo llena -->
+  </div>
+
+  <button class="carousel-btn right" onclick="nextSlide()">❯</button>
+
+</div>
+
+<div class="carousel-dots" id="carouselDots"></div>
+
+
+<!-- CONTENIDO -->
+<div id="content"></div>
+
+<!-- CATEGORÍAS (OBLIGATORIO PARA TU JS) -->
+<div id="accion"></div>
+<div id="comedia"></div>
+<div id="aventura"></div>
+<div id="drama"></div>
+<div id="terror"></div>
+
+<!-- MODAL IGUAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">✖</span>
+
+<img id="img">
+
+<div class="modal-info">
+<h2 id="title"></h2>
+<p id="description"></p>
+
+<iframe id="player" class="player" allowfullscreen></iframe>
+</div>
+
+</div>
+</div>
+
+<script src="peliculas.js"></script>
+
+</body>
+</html>
