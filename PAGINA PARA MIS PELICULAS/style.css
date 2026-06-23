@@ -397,7 +397,7 @@ box-shadow:0 0 35px rgba(0,229,255,0.22);
 flex-direction:column;
 }
 
-.submenu.show{
+.submenu.active{
 right:15px;
 }
 
