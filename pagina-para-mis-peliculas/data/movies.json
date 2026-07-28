@@ -1,0 +1,116 @@
+{
+  "carrusel": [
+    {
+      "title": "La posesión de la momia (2026)",
+      "category": "terror",
+      "img": "https://tse2.mm.bing.net/th/id/OIP.vQp6a8Oqy2poH45g9uqn6gHaD4?cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "La joven hija de un periodista desaparece en el desierto y regresa años después con secretos.",
+      "video": "https://vimeos.net/embed-rm46q7vy3t52.html",
+      "icon": "🔥"
+    },
+    {
+      "title": "Mortal Kombat II (2026)",
+      "category": "accion",
+      "img": "https://cdn.bolivia.com/sdi/2021/02/22/mortal-kombat-nuevo-trailer-pelicula-warner-bros-895126-1.jpg",
+      "desc": "Los campeones favoritos de los fans se enfrentan en la batalla definitiva.",
+      "video": "https://vimeos.net/embed-5yif23ty43ku.html"
+    },
+    {
+      "title": "Proyecto Fin del Mundo (2026)",
+      "category": "accion",
+      "img": "https://tse2.mm.bing.net/th/id/OIP.zUKz6333LMW4joYHlHEJkAHaEo?cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "Un profesor despierta en una nave a años luz de su hogar sin recuerdos claros.",
+      "video": "https://vimeos.net/embed-5yif23ty43ku.html"
+    },
+    {
+      "title": "Michael (2026)",
+      "category": "drama",
+      "img": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2025/11/Michel.jpg",
+      "desc": "Narra la vida de Michael Jackson más allá de la música.",
+      "video": "https://vimeos.net/embed-6opwlcemtzs9.html"
+    },
+    {
+      "title": "El Drama (2026)",
+      "category": "comedia",
+      "img": "https://tse3.mm.bing.net/th/id/OIP.H-jnc-s5bnjSEEYUFGwscAHaEK?cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "Cuenta la historia de una pareja cuyo romance cambia antes de su gran día.",
+      "video": "https://vimeos.net/embed-v0f2qzieze5h.html"
+    }
+  ],
+
+  "estrenos": [
+    {
+      "title": "La posesión de la momia (2026)",
+      "category": "terror",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/c22fdaaf2da7157fd0ecc757f34ff726_hd.webp",
+      "desc": "La joven hija de un periodista desaparece en el desierto sin dejar rastro.",
+      "video": "https://vimeos.net/embed-rm46q7vy3t52.html",
+      "icon": "🔥"
+    },
+    {
+      "title": "Mortal Kombat II (2026)",
+      "category": "accion",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/83d2aeedc57230d8d320d1c7f55a199a_hd.webp",
+      "desc": "Los campeones favoritos de los fans se enfrentan en la batalla definitiva.",
+      "video": "https://vimeos.net/embed-5yif23ty43ku.html"
+    },
+    {
+      "title": "Proyecto Fin del Mundo (2026)",
+      "category": "accion",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/4f7fc4c101128f501a402a3f6ee8c6dd_hd.webp",
+      "desc": "El profesor de ciencias despierta en una nave espacial a años luz de su hogar.",
+      "video": "https://vimeos.net/embed-5yif23ty43ku.html"
+    },
+    {
+      "title": "Michael (2026)",
+      "category": "drama",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/273671f175a059f3315e7492c4b83266_hd.webp",
+      "desc": "Narra la vida de Michael Jackson más allá de la música.",
+      "video": "https://vimeos.net/embed-6opwlcemtzs9.html"
+    },
+    {
+      "title": "El Drama (2026)",
+      "category": "comedia",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/7573478c11c82bf32781fe8fb472eb86_hd.webp",
+      "desc": "Cuenta la historia de una pareja cuyo romance cambia radicalmente antes de su gran día.",
+      "video": "https://vimeos.net/embed-v0f2qzieze5h.html"
+    }
+  ],
+
+  "populares": [
+    {
+      "title": "Hidden: Terror en Kingsville (2015)",
+      "img": "https://tse4.mm.bing.net/th/id/OIP.HQc18vAAr24dhwyyGNTVeQAAAA?cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "desc": "301 días han pasado desde que Ray, Claire y su hija encontrasen un refugio.",
+      "video": "https://vimeos.net/embed-5lv1x1gibjic.html",
+      "views": "5.1M",
+      "icon": "🔥"
+    },
+    {
+      "title": "Proyecto Fin del Mundo (2026)",
+      "category": "accion",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/4f7fc4c101128f501a402a3f6ee8c6dd_hd.webp",
+      "desc": "El profesor despierta en una nave espacial a años luz de su hogar.",
+      "video": "https://vimeos.net/embed-5yif23ty43ku.html"
+    },
+    {
+      "title": "La posesión de la momia (2026)",
+      "category": "terror",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/c22fdaaf2da7157fd0ecc757f34ff726_hd.webp",
+      "desc": "La joven hija regresa con la familia rota trayendo misterios.",
+      "video": "https://vimeos.net/embed-rm46q7vy3t52.html",
+      "icon": "🔥"
+    },
+    {
+      "title": "El Drama (2026)",
+      "category": "comedia",
+      "img": "https://lamovie.org/wp-content/uploads/thumbs/7573478c11c82bf32781fe8fb472eb86_hd.webp",
+      "desc": "Comedia romántica sobre una pareja y su gran día.",
+      "video": "https://vimeos.net/embed-v0f2qzieze5h.html"
+    }
+  ],
+
+  "dibujos": [],
+  "series": [],
+  "anime": []
+}

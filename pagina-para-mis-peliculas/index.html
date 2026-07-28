@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HD PLUS - INICIO</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader-circle" aria-hidden="true"></div>
+    <h2>Cargando...</h2>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="logo">HD PLUS</div>
+
+    <button class="menu-icon" id="menuIcon" aria-expanded="false" aria-controls="submenu">☰</button>
+
+    <nav class="submenu" id="submenu" role="navigation" aria-label="Menú principal">
+      <a href="./index.html">Inicio</a>
+      <a href="#">Películas</a>
+      <a href="#">Dibujos</a>
+      <a href="#">Anime Kids</a>
+      <a href="#">Series</a>
+    </nav>
+
+    <div class="search-box">
+      <label for="searchInput" class="sr-only">Buscar películas</label>
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input id="searchInput" type="text" placeholder="Buscar..." aria-label="Buscar películas">
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="hero-carousel" aria-roledescription="carrusel" aria-label="Carrusel de destacados">
+      <button class="carousel-btn left" id="prevBtn" aria-label="Anterior">❮</button>
+      <div class="carousel-wrapper" id="carouselWrapper" tabindex="0"></div>
+      <button class="carousel-btn right" id="nextBtn" aria-label="Siguiente">❯</button>
+    </section>
+
+    <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+
+    <div id="content" class="content" aria-live="polite"></div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+
+      <button class="close" id="modalClose" aria-label="Cerrar">✖</button>
+
+      <img id="img" alt="Portada" loading="lazy">
+
+      <div class="modal-info">
+        <h2 id="title"></h2>
+        <p id="description"></p>
+        <div class="player-wrap">
+          <iframe id="player" class="player" allowfullscreen title="Reproductor"></iframe>
+          <a id="openExternal" class="open-external" target="_blank" rel="noopener noreferrer">Abrir en nueva pestaña</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./script.js" type="module"></script>
+</body>
+
+</html>
