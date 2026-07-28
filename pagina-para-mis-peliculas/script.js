@@ -1,4 +1,4 @@
-// script.js (modular, compatible con fetch de JSON)
+// script.js (modular, compatible con fetch of JSON)
 const state = {
   carrusel: [],
   estrenos: [],
@@ -31,6 +31,7 @@ window.addEventListener('load', async () => {
   addCarouselHoverHandlers();
   addGlobalKeyHandlers();
   initTouch();
+  initMouseFocus();
 });
 
 async function loadData(){
@@ -65,23 +66,71 @@ function recomputeAllMovies(){
 function initMenu(){
   const menuIcon = document.getElementById('menuIcon');
   const submenu = document.getElementById('submenu');
+  const overlay = document.getElementById('menuOverlay');
   if(!menuIcon || !submenu) return;
+
+  function openMenu(){
+    submenu.classList.add('active');
+    overlay && overlay.classList.add('active') && overlay.removeAttribute('hidden');
+    menuIcon.setAttribute('aria-expanded', 'true');
+    // focus first link for keyboard/remote users
+    const first = submenu.querySelector('a');
+    if(first) first.focus();
+    // trap focus
+    document.addEventListener('keydown', trapMenuTab);
+  }
+  function closeMenu(){
+    submenu.classList.remove('active');
+    if(overlay){ overlay.classList.remove('active'); overlay.setAttribute('hidden',''); }
+    menuIcon.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('keydown', trapMenuTab);
+    menuIcon.focus();
+  }
 
   menuIcon.addEventListener('click', (e) =>{
     e.stopPropagation();
-    submenu.classList.toggle('active');
-    const expanded = submenu.classList.contains('active');
-    menuIcon.setAttribute('aria-expanded', expanded);
-    menuIcon.textContent = expanded ? '✖': '☰';
+    if(submenu.classList.contains('active')) closeMenu(); else openMenu();
   });
 
-  document.addEventListener('click', (e) =>{
-    if(!submenu.contains(e.target) && !menuIcon.contains(e.target)){
-      submenu.classList.remove('active');
-      menuIcon.setAttribute('aria-expanded', false);
-      menuIcon.textContent = '☰';
-    }
+  // click overlay closes
+  if(overlay) overlay.addEventListener('click', ()=> closeMenu());
+
+  // close when clicking a link
+  const links = submenu.querySelectorAll('a');
+  links.forEach((link, idx)=>{
+    link.setAttribute('tabindex','-1');
+    link.addEventListener('click', ()=> closeMenu());
+    link.addEventListener('keydown', (e)=>{
+      // basic remote handling inside menu
+      if(e.key === 'ArrowDown'){
+        e.preventDefault();
+        const next = links[idx+1] || links[0]; next.focus();
+      }
+      if(e.key === 'ArrowUp'){
+        e.preventDefault();
+        const prev = links[idx-1] || links[links.length-1]; prev.focus();
+      }
+      if(e.key === 'Enter' || e.key === 'NumpadEnter' || e.key === ' '){
+        link.click();
+      }
+    });
+    // allow mouse focus for TV with mouse
+    link.addEventListener('mouseenter', ()=> link.focus());
   });
+
+  // ensure menu is accessible via keyboard when visible
+  function trapMenuTab(e){
+    if(e.key !== 'Tab') return;
+    const focusable = Array.from(submenu.querySelectorAll('a'));
+    if(focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length -1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+
+  // close menu with Escape
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && submenu.classList.contains('active')) closeMenu(); });
 }
 
 /* CAROUSEL */
@@ -164,7 +213,7 @@ function renderSection(title, items){
   const row = document.createElement('div');
   row.className = 'row';
 
-  items.forEach(p =>{
+  items.forEach((p, index) =>{
     const card = document.createElement('div');
     card.className = 'card';
     card.setAttribute('tabindex','0');
@@ -202,6 +251,9 @@ function renderSection(title, items){
       if(e.key === 'ArrowDown') focusNextRow(card);
       if(e.key === 'ArrowUp') focusPrevRow(card);
     });
+
+    // Allow mouse hover to focus (useful on TV with mouse)
+    card.addEventListener('mouseenter', ()=> card.focus());
 
     row.appendChild(card);
   });
@@ -252,6 +304,7 @@ function searchMovies(query){
     const card = document.createElement('div'); card.className = 'card'; card.setAttribute('tabindex','0');
     card.innerHTML = `<span class="favorite">${escapeHtml(p.icon || '🔥')}</span><img src="${escapeAttr(p.img || PLACEHOLDER)}" alt="${escapeAttr(p.title||'Portada')}" loading="lazy"><div class="card-info"><div class="card-title">${escapeHtml(p.title)}</div></div>`;
     card.addEventListener('click', ()=> openMovie(p));
+    card.addEventListener('mouseenter', ()=> card.focus());
     row.appendChild(card);
   });
 
@@ -329,8 +382,13 @@ function addGlobalKeyHandlers(){
     // when modal open, ignore global
     const modal = document.getElementById('modal');
     if(modal && modal.getAttribute('aria-hidden') === 'false') return;
+    // when submenu open, don't change slides with arrows to allow menu navigation
+    const submenu = document.getElementById('submenu');
+    if(submenu && submenu.classList.contains('active')) return;
+
     if(e.key === 'ArrowLeft') prevSlide();
     if(e.key === 'ArrowRight') nextSlide();
+    // Enter key on focused card should open it (handled by card keydown)
   });
 }
 
@@ -342,14 +400,17 @@ function initTouch(){
   wrapper.addEventListener('touchend', (e)=> { const dx = (e.changedTouches[0].clientX - state.touchStartX); if(Math.abs(dx) > 40){ if(dx < 0) nextSlide(); else prevSlide(); } startCarousel(); }, {passive:true});
 }
 
+/* Mouse focus helpers (useful for TV with mouse) */
+function initMouseFocus(){
+  document.addEventListener('mousemove', (e)=>{
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    if(el && el.classList && el.classList.contains('card')) el.focus();
+  });
+}
+
 /* UTILS */
 function escapeHtml(str){ return String(str||'').replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])); }
 function escapeAttr(str){ return String(str||'').replace(/"/g,'&quot;'); }
-
-/* helpers to compute allMovies when data changes */
-function recomputeAllMovies(){
-  state.allMovies = [...state.estrenos, ...state.populares, ...state.dibujos, ...state.series, ...state.anime];
-}
 
 // expose some functions for debugging
 window._hdplus = { state, renderContent, startCarousel, stopCarousel };
