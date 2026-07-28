@@ -87,6 +87,22 @@ const peliculas = [
     img: "https://lamovie.org/wp-content/uploads/thumbs/7573478c11c82bf32781fe8fb472eb86_hd.webp",
     desc: "Cuenta la historia de una pareja cuyo romance cambia radicalmente antes de su gran día.",
     video: "https://vimeos.net/embed-v0f2qzieze5h.html"
+  },
+
+  {
+    title: "The Jester 2 (2025)",
+    category: "terror",
+    img: "https://image.tmdb.org/t/p/w300/tAbqhMUu5cgr1ChnBzmtqSHDfUB.jpg",
+    desc: "The Jester 2 es una Película estrenada en 2025 con una calificación de 6.2 en TMDB. Si estuviste buscando este título, no te preocupes que aquí la tenemos. Disfrútala gratis solo en HD PLUS",
+    video: "https://hglamioz.com/e/j5juv29pk9r1"
+  },
+
+  {
+    title: "The Jester  (2023)",
+    category: "terror",
+    img: "https://image.tmdb.org/t/p/w300/lQchkNOo6iYSt73GWIxRP151JnY.jpg",
+    desc: "Un ser malévolo conocido como El Bufón aterroriza a los habitantes de un pequeño pueblo en la noche de Halloween, incluyendo a dos hermanas distanciadas que deben unirse para encontrar la manera de derrotar a esta entidad maligna.",
+    video: "https://vimeos.net/embed-flmop5b4en6r.html"
   }
 ];
 
@@ -370,7 +386,7 @@ function closeModal() {
 }
 
 
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput") || document.getElementById("search");
 
 if (searchInput) {
   searchInput.addEventListener("input", (e) => {

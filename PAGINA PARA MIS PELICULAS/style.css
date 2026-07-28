@@ -55,7 +55,7 @@ border:none;
 background:#111827;
 color:white;
 outline:none;
-width:240px;
+width:180px;
 }
 
 .search-icon{
@@ -366,12 +366,32 @@ background:#00e5ff;
 @media(max-width:768px){
 
 .navbar{
-padding:0 12px;
-height:60px;
+position:relative;
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+padding:12px 12px 110px;
+height:auto;
 }
 
 .logo{
 font-size:18px;
+flex:0 0 auto;
+}
+
+.search-box{
+display:block;
+position:relative;
+order:2;
+flex:0 0 140px;
+max-width:140px;
+margin:0 6px;
+}
+
+.search-box input{
+width:100%;
 }
 
 .menu-icon{
@@ -380,21 +400,16 @@ font-size:28px;
 color:white;
 cursor:pointer;
 z-index:1001;
+order:3;
 }
 
 .submenu{
 position:fixed;
-top:70px;
+top:120px;
 right:-280px;
 width:230px;
 padding:18px;
-gap:12px;
-background:rgba(6,12,30,0.96);
-border-radius:20px;
-transition:0.4s;
-z-index:10000;
-box-shadow:0 0 35px rgba(0,229,255,0.22);
-flex-direction:column;
+    gap:18px;
 }
 
 .submenu.active{
@@ -413,37 +428,6 @@ transition:0.3s;
 .submenu a:hover{
 background:rgba(0,229,255,0.12);
 color:#e2e8f0;
-}
-
-.search-box{
-display:none;
-}
-
-.hero{
-padding:40px 20px;
-height:auto;
-min-height:60vh;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-.hero-carousel{
-height:50vh;
-margin-top:60px;
-}
-
-.carousel-slide{
-padding:40px 20px;
-}
-
-.carousel-slide h1{
-font-size:28px;
 }
 
 .carousel-slide p{
@@ -501,8 +485,12 @@ font-size:18px;
 @media(max-width:480px){
 
 .navbar{
-height:55px;
-padding:0 10px;
+position:relative;
+height:auto;
+padding:14px 12px 110px;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
@@ -513,13 +501,29 @@ font-size:16px;
 font-size:24px;
 }
 
+.search-box{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:calc(100% - 30px);
+max-width:240px;
+z-index:1002;
+}
+
+.search-box input{
+width:100%;
+padding:8px 10px 8px 34px;
+font-size:14px;
+}
+
 .hero-carousel{
 height:40vh;
 margin-top:55px;
 }
 
 .carousel-slide{
-padding:30px 15px;
+padding:24px 16px;
 }
 
 .carousel-slide h1{
@@ -536,11 +540,11 @@ padding:6px 10px;
 }
 
 .card{
-width:100px;
+width:110px;
 }
 
 .card img{
-height:150px;
+height:160px;
 }
 
 .card-title{
@@ -548,11 +552,114 @@ font-size:11px;
 }
 
 .modal-content img{
-max-width:250px;
+max-width:240px;
 }
 
 .player{
 height:200px;
 }
 
+}
+
+@media (max-width: 1200px) {
+  .hero-carousel{
+    height:55vh;
+  }
+
+  .carousel-slide{
+    padding:40px 24px;
+  }
+
+  .carousel-slide h1{
+    font-size:42px;
+  }
+
+  .carousel-slide p{
+    max-width:400px;
+  }
+
+  .carousel-btn{
+    font-size:26px;
+  }
+
+  .hero{
+    padding:50px 24px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    max-width:420px;
+  }
+
+  .section{
+    padding:35px 18px;
+  }
+
+  .row{
+    gap:18px;
+  }
+
+  .card{
+    width:150px;
+    min-width:150px;
+  }
+
+  .card img{
+    height:200px;
+  }
+
+  .player{
+    height:280px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-carousel{
+    height:75vh;
+  }
+
+  .carousel-slide h1{
+    font-size:64px;
+  }
+
+  .carousel-slide p{
+    max-width:700px;
+    font-size:1.1rem;
+  }
+
+  .hero{
+    padding:80px 60px;
+  }
+
+  .hero h1{
+    font-size:72px;
+  }
+
+  .hero p{
+    max-width:600px;
+  }
+
+  .section{
+    padding:55px 60px;
+  }
+
+  .card{
+    width:190px;
+    min-width:190px;
+  }
+
+  .card img{
+    height:250px;
+  }
+
+  .modal-content{
+    max-width:1080px;
+  }
+
+  .player{
+    height:420px;
+  }
 }

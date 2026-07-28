@@ -72,7 +72,7 @@ border:none;
 background:#111827;
 color:white;
 outline:none;
-width:240px;
+width:180px;
 }
 
 .search-icon{
@@ -299,15 +299,19 @@ background:rgba(6,12,30,0.96);
 border-radius:20px;
 padding:18px;
 flex-direction:column;
-gap:12px;
+gap:18px;
 z-index:10000;
 box-shadow:0 0 35px rgba(0,229,255,0.22);
-transition:0.4s ease;
+transition:right .3s ease, opacity .3s ease;
+opacity:0;
+pointer-events:none;
 }
 
 .submenu.active{
 display:flex;
 right:15px;
+opacity:1;
+pointer-events:auto;
 }
 
 .submenu a{
@@ -326,12 +330,15 @@ color:#e2e8f0;
 
 .search-box{
 position:absolute;
-left:60%;
-transform:translateX(-50%);
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+width:140px;
+max-width:140px;
 }
 
 .search-box input{
-width:165px;
+width:100%;
 padding:10px 10px 10px 35px;
 font-size:14px;
 }

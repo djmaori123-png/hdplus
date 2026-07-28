@@ -8,7 +8,7 @@
 
 <title>HD PLUS ANIME</title>
 
-<link rel="stylesheet" href="anime.css">
+<link rel="stylesheet" href="peliculas.css">
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
@@ -43,29 +43,20 @@
 
 <div class="search-box">
 <span class="search-icon">🔍</span>
-<input id="search" placeholder="Buscar anime...">
+<input id="searchInput" placeholder="Buscar anime...">
 </div>
 
 <div class="menu-icon" id="menuIcon">☰</div>
 
 </div>
 
-<!-- HERO -->
-
-<div class="hero anime-hero">
-
-<div>
-
-<h1>HD PLUS ANIME</h1>
-
-<p>
-Disfruta los mejores animes con calidad HD,
-temporadas y capítulos.
-</p>
-
+<div class="hero-carousel">
+  <button class="carousel-btn left" onclick="prevSlide()">❮</button>
+  <div class="carousel-wrapper" id="carouselWrapper"></div>
+  <button class="carousel-btn right" onclick="nextSlide()">❯</button>
 </div>
 
-</div>
+<div class="carousel-dots" id="carouselDots"></div>
 
 <!-- ESTRENOS -->
 
